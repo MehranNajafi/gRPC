@@ -1,0 +1,26 @@
+syntax = "proto3";
+message CreatePersonRequest{
+	string fName = 1;
+	string lName = 2;
+}
+message GetAllRequest{}
+message GetByPageRequest{
+	int32 Page = 1;
+}
+message Person{
+	int32 id = 1;
+	string fName = 2;
+	string lName = 3;
+}
+message GetAllResponse{
+	repeated Person People = 1;
+}
+message GetByPageResponse{
+	int32 Page = 1;
+	repeated Person People = 2;
+}
+service PersonService {
+	rpc CreatePerson(CreatePersonRequest) returns(Person);
+	rpc GetAll(GetAllRequest) returns(GetAllResponse);
+	rpc GetByPage(stream GetByPageRequest) returns(stream GetByPageResponse);
+}

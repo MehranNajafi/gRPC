@@ -1,0 +1,7 @@
+syntax = "proto3";
+package common;
+message Identity{
+	string fName = 1;
+	string lName = 2;
+}
+service CommonService{}

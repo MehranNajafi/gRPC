@@ -1,0 +1,2 @@
+gRPC_Objects/Common.cs \
+gRPC_Objects/CommonGrpc.cs: ../protos/common.proto

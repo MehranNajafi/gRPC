@@ -1,0 +1,2 @@
+gRPC_Objects/Math.cs \
+gRPC_Objects/MathGrpc.cs: ../protos/math.proto

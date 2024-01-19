@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+message FactorialRequest{
+	int32 Value = 1;
+}
+message ComputerAvgRequest{
+	int32 Value = 1;
+}
+message ComputerSumRequest{
+	int32 Value = 1;
+}
+message FactorialResponse{
+	int32 Value = 1;
+	int64 Result = 2;
+}
+message ComputerAvgResponse{
+	float Result = 1;
+}
+message ComputerSumResponse{
+	int32 Result = 1;
+}
+service MathService{
+	rpc Factorial(FactorialRequest) returns(stream FactorialResponse);
+	rpc Avg(stream ComputerAvgRequest) returns(ComputerAvgResponse);
+	rpc Sum(stream ComputerSumRequest) returns(stream ComputerSumResponse);
+}
