@@ -133,6 +133,23 @@
           }
         }
       },
+      "Grpc.Reflection/2.46.6": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "3.19.5",
+          "Grpc.Core.Api": "2.46.6"
+        },
+        "compile": {
+          "lib/netstandard2.0/Grpc.Reflection.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Grpc.Reflection.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Grpc.Tools/2.46.6": {
         "type": "package",
         "build": {
@@ -1200,6 +1217,27 @@
         "lib/netstandard2.1/Grpc.Core.Api.dll",
         "lib/netstandard2.1/Grpc.Core.Api.pdb",
         "lib/netstandard2.1/Grpc.Core.Api.xml",
+        "packageIcon.png"
+      ]
+    },
+    "Grpc.Reflection/2.46.6": {
+      "sha512": "jiI74mktUIzHcNBGx26HeqRTuwrFrt9uWf5OBxZdFpiC4UsHTADvv4Y2vJhzhfSpm730OZPXMHsV5fK0SO1AYA==",
+      "type": "package",
+      "path": "grpc.reflection/2.46.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "grpc.reflection.2.46.6.nupkg.sha512",
+        "grpc.reflection.nuspec",
+        "lib/net45/Grpc.Reflection.dll",
+        "lib/net45/Grpc.Reflection.pdb",
+        "lib/net45/Grpc.Reflection.xml",
+        "lib/netstandard1.5/Grpc.Reflection.dll",
+        "lib/netstandard1.5/Grpc.Reflection.pdb",
+        "lib/netstandard1.5/Grpc.Reflection.xml",
+        "lib/netstandard2.0/Grpc.Reflection.dll",
+        "lib/netstandard2.0/Grpc.Reflection.pdb",
+        "lib/netstandard2.0/Grpc.Reflection.xml",
         "packageIcon.png"
       ]
     },
@@ -2909,6 +2947,7 @@
       "Google.Protobuf >= 3.25.2",
       "Grpc >= 2.46.6",
       "Grpc.Core >= 2.46.6",
+      "Grpc.Reflection >= 2.46.6",
       "Grpc.Tools >= 2.46.6",
       "Microsoft.EntityFrameworkCore >= 8.0.1",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.1"
@@ -2920,11 +2959,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Projects\\gRPC_Basics\\Server\\Server.csproj",
+      "projectUniqueName": "G:\\Github\\gRPC\\gRPC_Basics\\Server\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "G:\\Projects\\gRPC_Basics\\Server\\Server.csproj",
+      "projectPath": "G:\\Github\\gRPC\\gRPC_Basics\\Server\\Server.csproj",
       "packagesPath": "C:\\Users\\Notebook\\.nuget\\packages\\",
-      "outputPath": "G:\\Projects\\gRPC_Basics\\Server\\obj\\",
+      "outputPath": "G:\\Github\\gRPC\\gRPC_Basics\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Notebook\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2966,6 +3005,10 @@
             "version": "[2.46.6, )"
           },
           "Grpc.Core": {
+            "target": "Package",
+            "version": "[2.46.6, )"
+          },
+          "Grpc.Reflection": {
             "target": "Package",
             "version": "[2.46.6, )"
           },

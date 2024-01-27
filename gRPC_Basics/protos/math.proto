@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package Maths;
+
 message FactorialRequest{
 	int32 Value = 1;
 }

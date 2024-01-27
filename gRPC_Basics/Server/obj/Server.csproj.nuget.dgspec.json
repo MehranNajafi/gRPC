@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\Projects\\gRPC_Basics\\Server\\Server.csproj": {}
+    "G:\\Github\\gRPC\\gRPC_Basics\\Server\\Server.csproj": {}
   },
   "projects": {
-    "G:\\Projects\\gRPC_Basics\\Server\\Server.csproj": {
+    "G:\\Github\\gRPC\\gRPC_Basics\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\Projects\\gRPC_Basics\\Server\\Server.csproj",
+        "projectUniqueName": "G:\\Github\\gRPC\\gRPC_Basics\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "G:\\Projects\\gRPC_Basics\\Server\\Server.csproj",
+        "projectPath": "G:\\Github\\gRPC\\gRPC_Basics\\Server\\Server.csproj",
         "packagesPath": "C:\\Users\\Notebook\\.nuget\\packages\\",
-        "outputPath": "G:\\Projects\\gRPC_Basics\\Server\\obj\\",
+        "outputPath": "G:\\Github\\gRPC\\gRPC_Basics\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Notebook\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,6 +53,10 @@
               "version": "[2.46.6, )"
             },
             "Grpc.Core": {
+              "target": "Package",
+              "version": "[2.46.6, )"
+            },
+            "Grpc.Reflection": {
               "target": "Package",
               "version": "[2.46.6, )"
             },

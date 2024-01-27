@@ -12,19 +12,19 @@ message Child{
 	common.Identity identity = 1;
 }
 message HelloRequest {
-	reserved 2;
-	reserved 11 to 15;
+	//reserved 2;
+	//reserved 11 to 15;
 	common.Identity identity = 1;
 	repeated Child children = 2;
-	google.protobuf.Timestamp birthDate = 3;
-	google.protobuf.Int32Value nullableInt = 4;
-	google.protobuf.StringValue middleName = 5;
-	google.protobuf.Duration averageTimeOnSite = 5;
-	oneof duration {
-		google.protobuf.Timestamp myDate = 6;
-		google.protobuf.Duration myTime = 7;
-	}
-	map<string,string> synonyms = 8;
+	//google.protobuf.Timestamp birthDate = 3;
+	//google.protobuf.Int32Value nullableInt = 4;
+	//google.protobuf.StringValue middleName = 5;
+	//google.protobuf.Duration averageTimeOnSite = 5;
+	//oneof duration {
+	//	google.protobuf.Timestamp myDate = 6;
+	//	google.protobuf.Duration myTime = 7;
+	//}
+	//map<string,string> synonyms = 8;
 }
 message HelloResponse {
 	string message = 1;

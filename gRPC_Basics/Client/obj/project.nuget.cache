@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ySFEErA9FxSqW3MNHNmoC/49svDoXdsploGb/1OTKEQ56Ip2T39MUQh7kqFSVD0j9Dy6pXnRcmVhBSbq3+bGyQ==",
+  "dgSpecHash": "qMc5WqpxIOGbkgAB+UOHT3viHxXNZUzKu2xoKasBZ/j/At8BcBhP8WHHmXb/kUIdD9HpR67qTMaPKnDRPflpCA==",
   "success": true,
-  "projectFilePath": "G:\\Projects\\gRPC_Basics\\Client\\Client.csproj",
+  "projectFilePath": "G:\\Github\\gRPC\\gRPC_Basics\\Client\\Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Notebook\\.nuget\\packages\\google.protobuf\\3.25.2\\google.protobuf.3.25.2.nupkg.sha512",
     "C:\\Users\\Notebook\\.nuget\\packages\\grpc\\2.46.6\\grpc.2.46.6.nupkg.sha512",

@@ -1,4 +1,7 @@
 syntax = "proto3";
+
+package People;
+
 message CreatePersonRequest{
 	string fName = 1;
 	string lName = 2;

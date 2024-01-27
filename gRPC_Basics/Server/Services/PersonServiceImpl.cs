@@ -1,13 +1,9 @@
 ﻿using Grpc.Core;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Identity.Client.Extensions.Msal;
+using People;
 using Server.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static PersonService;
+using static People.PersonService;
+
 
 namespace Server.Services
 {

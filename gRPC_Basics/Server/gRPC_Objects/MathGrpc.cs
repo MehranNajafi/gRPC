@@ -7,197 +7,199 @@
 
 using grpc = global::Grpc.Core;
 
-public static partial class MathService
-{
-  static readonly string __ServiceName = "MathService";
-
-  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
+namespace Maths {
+  public static partial class MathService
   {
-    #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
-    if (message is global::Google.Protobuf.IBufferMessage)
+    static readonly string __ServiceName = "Maths.MathService";
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
     {
-      context.SetPayloadLength(message.CalculateSize());
-      global::Google.Protobuf.MessageExtensions.WriteTo(message, context.GetBufferWriter());
-      context.Complete();
-      return;
+      #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
+      if (message is global::Google.Protobuf.IBufferMessage)
+      {
+        context.SetPayloadLength(message.CalculateSize());
+        global::Google.Protobuf.MessageExtensions.WriteTo(message, context.GetBufferWriter());
+        context.Complete();
+        return;
+      }
+      #endif
+      context.Complete(global::Google.Protobuf.MessageExtensions.ToByteArray(message));
     }
-    #endif
-    context.Complete(global::Google.Protobuf.MessageExtensions.ToByteArray(message));
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static class __Helper_MessageCache<T>
+    {
+      public static readonly bool IsBufferMessage = global::System.Reflection.IntrospectionExtensions.GetTypeInfo(typeof(global::Google.Protobuf.IBufferMessage)).IsAssignableFrom(typeof(T));
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static T __Helper_DeserializeMessage<T>(grpc::DeserializationContext context, global::Google.Protobuf.MessageParser<T> parser) where T : global::Google.Protobuf.IMessage<T>
+    {
+      #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
+      if (__Helper_MessageCache<T>.IsBufferMessage)
+      {
+        return parser.ParseFrom(context.PayloadAsReadOnlySequence());
+      }
+      #endif
+      return parser.ParseFrom(context.PayloadAsNewBuffer());
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Maths.FactorialRequest> __Marshaller_Maths_FactorialRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Maths.FactorialRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Maths.FactorialResponse> __Marshaller_Maths_FactorialResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Maths.FactorialResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Maths.ComputerAvgRequest> __Marshaller_Maths_ComputerAvgRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Maths.ComputerAvgRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Maths.ComputerAvgResponse> __Marshaller_Maths_ComputerAvgResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Maths.ComputerAvgResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Maths.ComputerSumRequest> __Marshaller_Maths_ComputerSumRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Maths.ComputerSumRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Maths.ComputerSumResponse> __Marshaller_Maths_ComputerSumResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Maths.ComputerSumResponse.Parser));
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Maths.FactorialRequest, global::Maths.FactorialResponse> __Method_Factorial = new grpc::Method<global::Maths.FactorialRequest, global::Maths.FactorialResponse>(
+        grpc::MethodType.ServerStreaming,
+        __ServiceName,
+        "Factorial",
+        __Marshaller_Maths_FactorialRequest,
+        __Marshaller_Maths_FactorialResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Maths.ComputerAvgRequest, global::Maths.ComputerAvgResponse> __Method_Avg = new grpc::Method<global::Maths.ComputerAvgRequest, global::Maths.ComputerAvgResponse>(
+        grpc::MethodType.ClientStreaming,
+        __ServiceName,
+        "Avg",
+        __Marshaller_Maths_ComputerAvgRequest,
+        __Marshaller_Maths_ComputerAvgResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Maths.ComputerSumRequest, global::Maths.ComputerSumResponse> __Method_Sum = new grpc::Method<global::Maths.ComputerSumRequest, global::Maths.ComputerSumResponse>(
+        grpc::MethodType.DuplexStreaming,
+        __ServiceName,
+        "Sum",
+        __Marshaller_Maths_ComputerSumRequest,
+        __Marshaller_Maths_ComputerSumResponse);
+
+    /// <summary>Service descriptor</summary>
+    public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
+    {
+      get { return global::Maths.MathReflection.Descriptor.Services[0]; }
+    }
+
+    /// <summary>Base class for server-side implementations of MathService</summary>
+    [grpc::BindServiceMethod(typeof(MathService), "BindService")]
+    public abstract partial class MathServiceBase
+    {
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task Factorial(global::Maths.FactorialRequest request, grpc::IServerStreamWriter<global::Maths.FactorialResponse> responseStream, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Maths.ComputerAvgResponse> Avg(grpc::IAsyncStreamReader<global::Maths.ComputerAvgRequest> requestStream, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task Sum(grpc::IAsyncStreamReader<global::Maths.ComputerSumRequest> requestStream, grpc::IServerStreamWriter<global::Maths.ComputerSumResponse> responseStream, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+    }
+
+    /// <summary>Client for MathService</summary>
+    public partial class MathServiceClient : grpc::ClientBase<MathServiceClient>
+    {
+      /// <summary>Creates a new client for MathService</summary>
+      /// <param name="channel">The channel to use to make remote calls.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public MathServiceClient(grpc::ChannelBase channel) : base(channel)
+      {
+      }
+      /// <summary>Creates a new client for MathService that uses a custom <c>CallInvoker</c>.</summary>
+      /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public MathServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      {
+      }
+      /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected MathServiceClient() : base()
+      {
+      }
+      /// <summary>Protected constructor to allow creation of configured clients.</summary>
+      /// <param name="configuration">The client configuration.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected MathServiceClient(ClientBaseConfiguration configuration) : base(configuration)
+      {
+      }
+
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncServerStreamingCall<global::Maths.FactorialResponse> Factorial(global::Maths.FactorialRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return Factorial(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncServerStreamingCall<global::Maths.FactorialResponse> Factorial(global::Maths.FactorialRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncServerStreamingCall(__Method_Factorial, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncClientStreamingCall<global::Maths.ComputerAvgRequest, global::Maths.ComputerAvgResponse> Avg(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return Avg(new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncClientStreamingCall<global::Maths.ComputerAvgRequest, global::Maths.ComputerAvgResponse> Avg(grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncClientStreamingCall(__Method_Avg, null, options);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncDuplexStreamingCall<global::Maths.ComputerSumRequest, global::Maths.ComputerSumResponse> Sum(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return Sum(new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncDuplexStreamingCall<global::Maths.ComputerSumRequest, global::Maths.ComputerSumResponse> Sum(grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncDuplexStreamingCall(__Method_Sum, null, options);
+      }
+      /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected override MathServiceClient NewInstance(ClientBaseConfiguration configuration)
+      {
+        return new MathServiceClient(configuration);
+      }
+    }
+
+    /// <summary>Creates service definition that can be registered with a server</summary>
+    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public static grpc::ServerServiceDefinition BindService(MathServiceBase serviceImpl)
+    {
+      return grpc::ServerServiceDefinition.CreateBuilder()
+          .AddMethod(__Method_Factorial, serviceImpl.Factorial)
+          .AddMethod(__Method_Avg, serviceImpl.Avg)
+          .AddMethod(__Method_Sum, serviceImpl.Sum).Build();
+    }
+
+    /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
+    /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
+    /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
+    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, MathServiceBase serviceImpl)
+    {
+      serviceBinder.AddMethod(__Method_Factorial, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::Maths.FactorialRequest, global::Maths.FactorialResponse>(serviceImpl.Factorial));
+      serviceBinder.AddMethod(__Method_Avg, serviceImpl == null ? null : new grpc::ClientStreamingServerMethod<global::Maths.ComputerAvgRequest, global::Maths.ComputerAvgResponse>(serviceImpl.Avg));
+      serviceBinder.AddMethod(__Method_Sum, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::Maths.ComputerSumRequest, global::Maths.ComputerSumResponse>(serviceImpl.Sum));
+    }
+
   }
-
-  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  static class __Helper_MessageCache<T>
-  {
-    public static readonly bool IsBufferMessage = global::System.Reflection.IntrospectionExtensions.GetTypeInfo(typeof(global::Google.Protobuf.IBufferMessage)).IsAssignableFrom(typeof(T));
-  }
-
-  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  static T __Helper_DeserializeMessage<T>(grpc::DeserializationContext context, global::Google.Protobuf.MessageParser<T> parser) where T : global::Google.Protobuf.IMessage<T>
-  {
-    #if !GRPC_DISABLE_PROTOBUF_BUFFER_SERIALIZATION
-    if (__Helper_MessageCache<T>.IsBufferMessage)
-    {
-      return parser.ParseFrom(context.PayloadAsReadOnlySequence());
-    }
-    #endif
-    return parser.ParseFrom(context.PayloadAsNewBuffer());
-  }
-
-  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  static readonly grpc::Marshaller<global::FactorialRequest> __Marshaller_FactorialRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::FactorialRequest.Parser));
-  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  static readonly grpc::Marshaller<global::FactorialResponse> __Marshaller_FactorialResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::FactorialResponse.Parser));
-  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  static readonly grpc::Marshaller<global::ComputerAvgRequest> __Marshaller_ComputerAvgRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ComputerAvgRequest.Parser));
-  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  static readonly grpc::Marshaller<global::ComputerAvgResponse> __Marshaller_ComputerAvgResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ComputerAvgResponse.Parser));
-  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  static readonly grpc::Marshaller<global::ComputerSumRequest> __Marshaller_ComputerSumRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ComputerSumRequest.Parser));
-  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  static readonly grpc::Marshaller<global::ComputerSumResponse> __Marshaller_ComputerSumResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::ComputerSumResponse.Parser));
-
-  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  static readonly grpc::Method<global::FactorialRequest, global::FactorialResponse> __Method_Factorial = new grpc::Method<global::FactorialRequest, global::FactorialResponse>(
-      grpc::MethodType.ServerStreaming,
-      __ServiceName,
-      "Factorial",
-      __Marshaller_FactorialRequest,
-      __Marshaller_FactorialResponse);
-
-  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  static readonly grpc::Method<global::ComputerAvgRequest, global::ComputerAvgResponse> __Method_Avg = new grpc::Method<global::ComputerAvgRequest, global::ComputerAvgResponse>(
-      grpc::MethodType.ClientStreaming,
-      __ServiceName,
-      "Avg",
-      __Marshaller_ComputerAvgRequest,
-      __Marshaller_ComputerAvgResponse);
-
-  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  static readonly grpc::Method<global::ComputerSumRequest, global::ComputerSumResponse> __Method_Sum = new grpc::Method<global::ComputerSumRequest, global::ComputerSumResponse>(
-      grpc::MethodType.DuplexStreaming,
-      __ServiceName,
-      "Sum",
-      __Marshaller_ComputerSumRequest,
-      __Marshaller_ComputerSumResponse);
-
-  /// <summary>Service descriptor</summary>
-  public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
-  {
-    get { return global::MathReflection.Descriptor.Services[0]; }
-  }
-
-  /// <summary>Base class for server-side implementations of MathService</summary>
-  [grpc::BindServiceMethod(typeof(MathService), "BindService")]
-  public abstract partial class MathServiceBase
-  {
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual global::System.Threading.Tasks.Task Factorial(global::FactorialRequest request, grpc::IServerStreamWriter<global::FactorialResponse> responseStream, grpc::ServerCallContext context)
-    {
-      throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-    }
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual global::System.Threading.Tasks.Task<global::ComputerAvgResponse> Avg(grpc::IAsyncStreamReader<global::ComputerAvgRequest> requestStream, grpc::ServerCallContext context)
-    {
-      throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-    }
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual global::System.Threading.Tasks.Task Sum(grpc::IAsyncStreamReader<global::ComputerSumRequest> requestStream, grpc::IServerStreamWriter<global::ComputerSumResponse> responseStream, grpc::ServerCallContext context)
-    {
-      throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-    }
-
-  }
-
-  /// <summary>Client for MathService</summary>
-  public partial class MathServiceClient : grpc::ClientBase<MathServiceClient>
-  {
-    /// <summary>Creates a new client for MathService</summary>
-    /// <param name="channel">The channel to use to make remote calls.</param>
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public MathServiceClient(grpc::ChannelBase channel) : base(channel)
-    {
-    }
-    /// <summary>Creates a new client for MathService that uses a custom <c>CallInvoker</c>.</summary>
-    /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public MathServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
-    {
-    }
-    /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    protected MathServiceClient() : base()
-    {
-    }
-    /// <summary>Protected constructor to allow creation of configured clients.</summary>
-    /// <param name="configuration">The client configuration.</param>
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    protected MathServiceClient(ClientBaseConfiguration configuration) : base(configuration)
-    {
-    }
-
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual grpc::AsyncServerStreamingCall<global::FactorialResponse> Factorial(global::FactorialRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-    {
-      return Factorial(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-    }
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual grpc::AsyncServerStreamingCall<global::FactorialResponse> Factorial(global::FactorialRequest request, grpc::CallOptions options)
-    {
-      return CallInvoker.AsyncServerStreamingCall(__Method_Factorial, null, options, request);
-    }
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual grpc::AsyncClientStreamingCall<global::ComputerAvgRequest, global::ComputerAvgResponse> Avg(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-    {
-      return Avg(new grpc::CallOptions(headers, deadline, cancellationToken));
-    }
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual grpc::AsyncClientStreamingCall<global::ComputerAvgRequest, global::ComputerAvgResponse> Avg(grpc::CallOptions options)
-    {
-      return CallInvoker.AsyncClientStreamingCall(__Method_Avg, null, options);
-    }
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual grpc::AsyncDuplexStreamingCall<global::ComputerSumRequest, global::ComputerSumResponse> Sum(grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-    {
-      return Sum(new grpc::CallOptions(headers, deadline, cancellationToken));
-    }
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    public virtual grpc::AsyncDuplexStreamingCall<global::ComputerSumRequest, global::ComputerSumResponse> Sum(grpc::CallOptions options)
-    {
-      return CallInvoker.AsyncDuplexStreamingCall(__Method_Sum, null, options);
-    }
-    /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    protected override MathServiceClient NewInstance(ClientBaseConfiguration configuration)
-    {
-      return new MathServiceClient(configuration);
-    }
-  }
-
-  /// <summary>Creates service definition that can be registered with a server</summary>
-  /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
-  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  public static grpc::ServerServiceDefinition BindService(MathServiceBase serviceImpl)
-  {
-    return grpc::ServerServiceDefinition.CreateBuilder()
-        .AddMethod(__Method_Factorial, serviceImpl.Factorial)
-        .AddMethod(__Method_Avg, serviceImpl.Avg)
-        .AddMethod(__Method_Sum, serviceImpl.Sum).Build();
-  }
-
-  /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
-  /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
-  /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
-  /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
-  [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-  public static void BindService(grpc::ServiceBinderBase serviceBinder, MathServiceBase serviceImpl)
-  {
-    serviceBinder.AddMethod(__Method_Factorial, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::FactorialRequest, global::FactorialResponse>(serviceImpl.Factorial));
-    serviceBinder.AddMethod(__Method_Avg, serviceImpl == null ? null : new grpc::ClientStreamingServerMethod<global::ComputerAvgRequest, global::ComputerAvgResponse>(serviceImpl.Avg));
-    serviceBinder.AddMethod(__Method_Sum, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::ComputerSumRequest, global::ComputerSumResponse>(serviceImpl.Sum));
-  }
-
 }
 #endregion

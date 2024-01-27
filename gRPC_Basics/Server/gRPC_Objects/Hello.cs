@@ -26,20 +26,19 @@ namespace Server.Hello {
           string.Concat(
             "CgtoZWxsby5wcm90bxIMU2VydmVyLkhlbGxvGgxjb21tb24ucHJvdG8aH2dv",
             "b2dsZS9wcm90b2J1Zi90aW1lc3RhbXAucHJvdG8aHmdvb2dsZS9wcm90b2J1",
-            "Zi93cmFwcGVycy5wcm90byIrCgVDaGlsZBIiCghpZGVudGl0eRgBIAEoCzIQ",
-            "LmNvbW1vbi5JZGVudGl0eSK6AQoMSGVsbG9SZXF1ZXN0EiIKCGlkZW50aXR5",
-            "GAEgASgLMhAuY29tbW9uLklkZW50aXR5EiUKCGNoaWxkcmVuGAIgAygLMhMu",
-            "U2VydmVyLkhlbGxvLkNoaWxkEi0KCWJpcnRoRGF0ZRgDIAEoCzIaLmdvb2ds",
-            "ZS5wcm90b2J1Zi5UaW1lc3RhbXASMAoLbnVsbGFibGVJbnQYBCABKAsyGy5n",
-            "b29nbGUucHJvdG9idWYuSW50MzJWYWx1ZSIgCg1IZWxsb1Jlc3BvbnNlEg8K",
-            "B21lc3NhZ2UYASABKAkyUgoMSGVsbG9TZXJ2aWNlEkIKB1dlbGNvbWUSGi5T",
-            "ZXJ2ZXIuSGVsbG8uSGVsbG9SZXF1ZXN0GhsuU2VydmVyLkhlbGxvLkhlbGxv",
-            "UmVzcG9uc2VCD6oCDFNlcnZlci5IZWxsb2IGcHJvdG8z"));
+            "Zi93cmFwcGVycy5wcm90bxoeZ29vZ2xlL3Byb3RvYnVmL2R1cmF0aW9uLnBy",
+            "b3RvIisKBUNoaWxkEiIKCGlkZW50aXR5GAEgASgLMhAuY29tbW9uLklkZW50",
+            "aXR5IlkKDEhlbGxvUmVxdWVzdBIiCghpZGVudGl0eRgBIAEoCzIQLmNvbW1v",
+            "bi5JZGVudGl0eRIlCghjaGlsZHJlbhgCIAMoCzITLlNlcnZlci5IZWxsby5D",
+            "aGlsZCIgCg1IZWxsb1Jlc3BvbnNlEg8KB21lc3NhZ2UYASABKAkyUgoMSGVs",
+            "bG9TZXJ2aWNlEkIKB1dlbGNvbWUSGi5TZXJ2ZXIuSGVsbG8uSGVsbG9SZXF1",
+            "ZXN0GhsuU2VydmVyLkhlbGxvLkhlbGxvUmVzcG9uc2VCD6oCDFNlcnZlci5I",
+            "ZWxsb2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Common.CommonReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Common.CommonReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Server.Hello.Child), global::Server.Hello.Child.Parser, new[]{ "Identity" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Server.Hello.HelloRequest), global::Server.Hello.HelloRequest.Parser, new[]{ "Identity", "Children", "BirthDate", "NullableInt" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Server.Hello.HelloRequest), global::Server.Hello.HelloRequest.Parser, new[]{ "Identity", "Children" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Server.Hello.HelloResponse), global::Server.Hello.HelloResponse.Parser, new[]{ "Message" }, null, null, null, null)
           }));
     }
@@ -281,8 +280,6 @@ namespace Server.Hello {
     public HelloRequest(HelloRequest other) : this() {
       identity_ = other.identity_ != null ? other.identity_.Clone() : null;
       children_ = other.children_.Clone();
-      birthDate_ = other.birthDate_ != null ? other.birthDate_.Clone() : null;
-      NullableInt = other.NullableInt;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -295,6 +292,10 @@ namespace Server.Hello {
     /// <summary>Field number for the "identity" field.</summary>
     public const int IdentityFieldNumber = 1;
     private global::Common.Identity identity_;
+    /// <summary>
+    ///reserved 2;
+    ///reserved 11 to 15;
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Common.Identity Identity {
@@ -309,37 +310,22 @@ namespace Server.Hello {
     private static readonly pb::FieldCodec<global::Server.Hello.Child> _repeated_children_codec
         = pb::FieldCodec.ForMessage(18, global::Server.Hello.Child.Parser);
     private readonly pbc::RepeatedField<global::Server.Hello.Child> children_ = new pbc::RepeatedField<global::Server.Hello.Child>();
+    /// <summary>
+    ///google.protobuf.Timestamp birthDate = 3;
+    ///google.protobuf.Int32Value nullableInt = 4;
+    ///google.protobuf.StringValue middleName = 5;
+    ///google.protobuf.Duration averageTimeOnSite = 5;
+    ///oneof duration {
+    ///	google.protobuf.Timestamp myDate = 6;
+    ///	google.protobuf.Duration myTime = 7;
+    ///}
+    ///map&lt;string,string> synonyms = 8;
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pbc::RepeatedField<global::Server.Hello.Child> Children {
       get { return children_; }
     }
-
-    /// <summary>Field number for the "birthDate" field.</summary>
-    public const int BirthDateFieldNumber = 3;
-    private global::Google.Protobuf.WellKnownTypes.Timestamp birthDate_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Google.Protobuf.WellKnownTypes.Timestamp BirthDate {
-      get { return birthDate_; }
-      set {
-        birthDate_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "nullableInt" field.</summary>
-    public const int NullableIntFieldNumber = 4;
-    private static readonly pb::FieldCodec<int?> _single_nullableInt_codec = pb::FieldCodec.ForStructWrapper<int>(34);
-    private int? nullableInt_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int? NullableInt {
-      get { return nullableInt_; }
-      set {
-        nullableInt_ = value;
-      }
-    }
-
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -358,8 +344,6 @@ namespace Server.Hello {
       }
       if (!object.Equals(Identity, other.Identity)) return false;
       if(!children_.Equals(other.children_)) return false;
-      if (!object.Equals(BirthDate, other.BirthDate)) return false;
-      if (NullableInt != other.NullableInt) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -369,8 +353,6 @@ namespace Server.Hello {
       int hash = 1;
       if (identity_ != null) hash ^= Identity.GetHashCode();
       hash ^= children_.GetHashCode();
-      if (birthDate_ != null) hash ^= BirthDate.GetHashCode();
-      if (nullableInt_ != null) hash ^= NullableInt.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -394,13 +376,6 @@ namespace Server.Hello {
         output.WriteMessage(Identity);
       }
       children_.WriteTo(output, _repeated_children_codec);
-      if (birthDate_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(BirthDate);
-      }
-      if (nullableInt_ != null) {
-        _single_nullableInt_codec.WriteTagAndValue(output, NullableInt);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -416,13 +391,6 @@ namespace Server.Hello {
         output.WriteMessage(Identity);
       }
       children_.WriteTo(ref output, _repeated_children_codec);
-      if (birthDate_ != null) {
-        output.WriteRawTag(26);
-        output.WriteMessage(BirthDate);
-      }
-      if (nullableInt_ != null) {
-        _single_nullableInt_codec.WriteTagAndValue(ref output, NullableInt);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -437,12 +405,6 @@ namespace Server.Hello {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Identity);
       }
       size += children_.CalculateSize(_repeated_children_codec);
-      if (birthDate_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(BirthDate);
-      }
-      if (nullableInt_ != null) {
-        size += _single_nullableInt_codec.CalculateSizeWithTag(NullableInt);
-      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -462,17 +424,6 @@ namespace Server.Hello {
         Identity.MergeFrom(other.Identity);
       }
       children_.Add(other.children_);
-      if (other.birthDate_ != null) {
-        if (birthDate_ == null) {
-          BirthDate = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-        }
-        BirthDate.MergeFrom(other.BirthDate);
-      }
-      if (other.nullableInt_ != null) {
-        if (nullableInt_ == null || other.NullableInt != 0) {
-          NullableInt = other.NullableInt;
-        }
-      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -499,20 +450,6 @@ namespace Server.Hello {
             children_.AddEntriesFrom(input, _repeated_children_codec);
             break;
           }
-          case 26: {
-            if (birthDate_ == null) {
-              BirthDate = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-            }
-            input.ReadMessage(BirthDate);
-            break;
-          }
-          case 34: {
-            int? value = _single_nullableInt_codec.Read(input);
-            if (nullableInt_ == null || value != 0) {
-              NullableInt = value;
-            }
-            break;
-          }
         }
       }
     #endif
@@ -537,20 +474,6 @@ namespace Server.Hello {
           }
           case 18: {
             children_.AddEntriesFrom(ref input, _repeated_children_codec);
-            break;
-          }
-          case 26: {
-            if (birthDate_ == null) {
-              BirthDate = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-            }
-            input.ReadMessage(BirthDate);
-            break;
-          }
-          case 34: {
-            int? value = _single_nullableInt_codec.Read(ref input);
-            if (nullableInt_ == null || value != 0) {
-              NullableInt = value;
-            }
             break;
           }
         }

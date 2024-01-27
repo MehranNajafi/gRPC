@@ -1,8 +1,16 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
+using Maths;
+using People;
 using Server.Hello;
 
-Channel channel = new Channel("localhost:7777", ChannelCredentials.Insecure);
+//var clientCert = File.ReadAllText("G:\\Github\\gRPC\\gRPC_Basics\\Client\\client.crt");
+//var clientKey = File.ReadAllText("G:\\Github\\gRPC\\gRPC_Basics\\Client\\client.key");
+//var rootCA = File.ReadAllText("G:\\Github\\gRPC\\gRPC_Basics\\Client\\ca.crt");
+
+//SslCredentials ssl = new SslCredentials(rootCA, new KeyCertificatePair(clientCert, clientKey));
+
+Channel channel = new Channel("localhost", 1070, ChannelCredentials.Insecure);
 try
 {
     await channel.ConnectAsync();
@@ -31,9 +39,9 @@ try
     await getbyPage.RequestStream.CompleteAsync();
     Console.ReadLine();
 }
-catch (Exception)
+catch (RpcException ex) when (ex.StatusCode == StatusCode.DeadlineExceeded)
 {
-    throw;
+    Console.WriteLine("Deadline Error");
 }
 finally
 {
@@ -60,13 +68,12 @@ static async Task ResponseWithCollection(Channel channel)
         {
             FName = "Mehran",
             LName = "Najafi"
-        },
-        BirthDate = Timestamp.FromDateTime(new DateTime(1992, 8, 7))
+        }
     };
     helloRequest.Children.Add(new[] {new Child { Identity = new Common.Identity{ FName="M1" } },
     new Child { Identity = new Common.Identity{FName="M2"} },
     new Child { Identity = new Common.Identity{FName="M3"} } });
-    var response = await helloService.WelcomeAsync(helloRequest);
+    var response = await helloService.WelcomeAsync(helloRequest, deadline: DateTime.UtcNow.AddSeconds(2));
     Console.WriteLine(response.Message);
 }
 

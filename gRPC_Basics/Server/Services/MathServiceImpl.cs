@@ -1,11 +1,12 @@
 ﻿using Azure.Core;
 using Grpc.Core;
+using Maths;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static MathService;
+using static Maths.MathService;
 
 namespace Server.Services
 {
@@ -41,7 +42,7 @@ namespace Server.Services
             while (await requestStream.MoveNext())
             {
                 total += requestStream.Current.Value;
-                await responseStream.WriteAsync(new ComputerSumResponse { Result = total });
+                await responseStream.WriteAsync(new ComputerSumResponse { Result = total }, context.CancellationToken);
             }
         }
     }

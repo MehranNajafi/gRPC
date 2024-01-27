@@ -2,4 +2,5 @@ gRPC_Objects/Hello.cs \
 gRPC_Objects/HelloGrpc.cs: ../protos/common.proto\
  C:/Users/Notebook/.nuget/packages/grpc.tools/2.46.6/build/native/include/google/protobuf/timestamp.proto\
  C:/Users/Notebook/.nuget/packages/grpc.tools/2.46.6/build/native/include/google/protobuf/wrappers.proto\
+ C:/Users/Notebook/.nuget/packages/grpc.tools/2.46.6/build/native/include/google/protobuf/duration.proto\
  ../protos/hello.proto
